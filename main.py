@@ -9,6 +9,10 @@ The main goal is to navigate through the forest, solve puzzles, collect items, a
 """
 import json
 
+class Map:
+    def __init__(self, rooms: list[Room]):
+        self.rooms = rooms
+
 class Room:
     """
     A room in the game.
@@ -27,6 +31,7 @@ class Room:
     
     def remove_item(self, item):
         self.items.remove(item)
+
 
 class Item:
     def __init__(self, name, description):
@@ -57,8 +62,6 @@ class Game:
             self.player = data["player"]
             self.inventory = data["inventory"]
             self.current_room = data["current_room"]
-            
-    
 
 def main():
     pass
